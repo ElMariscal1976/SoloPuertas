@@ -1,0 +1,16 @@
+{% load static %}
+<section id="hero">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+            {% for row in slider_list %}
+                <div class="carusel-item {% if forloop.first %} active {% endif %}" style="background-image: url({{ row.imagen.url }});">
+                    <div class="carousel-container">
+                        <div class="carousel-content animate__animated animate__fadeInUp">
+
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

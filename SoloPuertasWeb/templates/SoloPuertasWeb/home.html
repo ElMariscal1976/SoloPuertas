@@ -1,0 +1,170 @@
+{% extends "SoloPuertasWeb/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'SoloPuertasWeb/slider.html' %}
+<!-- mens -->
+<div class="men-wear">
+	<div class="container">
+		<div class="col-md-4 products-left">
+			<div class="filter-price">
+				<h3>Filtrar por precio</h3>
+					<ul class="dropdown-menu6">
+						<li>                
+							<div id="slider-range"></div>							
+							<input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
+						</li>			
+					</ul>
+							<!---->
+							<script type='text/javascript'>//<![CDATA[ 
+							$(window).load(function(){
+							 $( "#slider-range" ).slider({
+										range: true,
+										min: 0,
+										max: 9000,
+										values: [ 1000, 7000 ],
+										slide: function( event, ui ) {  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+										}
+							 });
+							$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+
+							});//]]>  
+
+							</script>
+						<script type="text/javascript" src="{% static 'SoloPuertasWeb/js/jquery-ui.js' %}"></script>
+					 <!---->
+			</div>
+			<div class="css-treeview">
+				<h4>Categorías</h4>
+				<div class="swit form">	
+					<form>
+					<div class="check_box"> <div class="radio"> <label><input type="radio" name="radio" checked=""><i></i>Por precio</label> </div></div>
+					<div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>Por marca</label> </div></div>
+					<div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>Por color</label> </div></div>
+					<div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>Según el lugar de uso</label> </div></div>
+					<input type="submit" value="ENVIAR">
+					</form>
+				</div>
+			</div>
+			<div class="community-poll">
+				<h4>Deja tu opnión</h4>
+				<div class="swit form">	
+					<form>
+					<div class="check_box"> <div class="radio"> <label><input type="radio" name="radio" checked=""><i></i>Buena la logística</label> </div></div>
+					<div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>Buen precio</label> </div></div>
+					<div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>Precio alto</label> </div></div>
+					<div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>Variedad de productos</label> </div></div>	
+					<div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>Pago seguro</label> </div></div>		
+					<input type="submit" value="ENVIAR">
+					</form>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="col-md-8 products-right">
+			<h5>Comparar producto</h5>
+			<div class="sort-grid">
+				<div class="sorting">
+					<h6>Parametros</h6>
+					<select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
+						<option value="null">Por defecto</option>
+						<option value="null">Parametros 1</option> 
+						<option value="null">Parametros 2</option>
+						<option value="null">Parametros 3</option>
+						<option value="null">Parametros 4</option>		
+					</select>
+					<div class="clearfix"></div>
+				</div>
+				
+				<div class="clearfix"></div>
+			</div>
+			<div class="men-wear-top">
+				<script src="{% static 'SoloPuertasWeb/js/responsiveslides.min.js' %}"></script>
+				<script>
+					// You can also use "$(window).load(function() {"
+					$(function () {
+					 // Slideshow 4
+					$("#slider3").responsiveSlides({
+						auto: true,
+						pager: true,
+						nav: false,
+						speed: 500,
+						namespace: "callbacks",
+						before: function () {
+					$('.events').append("<li>before event fired.</li>");
+					},
+					after: function () {
+						$('.events').append("<li>after event fired.</li>");
+						}
+						});
+					});
+				</script>
+				<div  id="top" class="callbacks_container">
+					<ul class="rslides" id="slider3">
+						<li>
+							<img class="img-responsive" src="{% static 'SoloPuertasWeb/images/spuertas1.jpg' %}" alt=" "/>
+						</li>
+						<li>
+							<img class="img-responsive" src="{% static 'SoloPuertasWeb/images/spuertas2.jpg' %}" alt=" "/>
+						</li>
+						<li>
+							<img class="img-responsive" src="{% static 'SoloPuertasWeb/images/spuertas3.jpg' %}" alt=" "/>
+						</li>
+						<li>
+							<img class="img-responsive" src="{% static 'SoloPuertasWeb/images/spuertas4.jpg' %}" alt=" "/>
+						</li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="men-wear-bottom">
+				<div class="col-sm-4 men-wear-left">
+					<img class="img-responsive" src="{% static 'SoloPuertasWeb/images/solopuertaslog.jpg' %}" alt=" " />
+				</div>
+				<div class="col-sm-8 men-wear-right">
+					<h4>Solo puertas</h4>
+					<p>Texto sobre puertas</p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			{% if productos %}
+			{% for producto in productos %}
+				{% if forloop.first %}<div class="col-md-4 product-men no-pad-men">{% endif %}
+				<div class="men-pro-item simpleCart_shelfItem">
+					<div class="men-thumb-item">
+						<img src="{{ producto.imagen.url }}" alt="" class="pro-image-front">
+						<img src="{{ producto.imagen.url }}" alt="" class="pro-image-back">
+							<div class="men-cart-pro">
+								<div class="inner-men-cart-pro">
+									<a href="single.html" class="link-product-add-cart">Ver más</a>
+								</div>
+							</div>
+							<span class="product-new-top">Nuevo</span>
+					</div>
+					<div class="item-info-product ">
+						<h4><a href="single.html">{{ producto.nombre }}</a></h4>
+						<div class="info-product-price">
+							<span class="item_price">{{ producto.precio }}</span>
+							<del>{{ producto.precio }}</del>
+						</div>
+						<a href="#" class="item_add single-item hvr-outline-out button2">Comprar</a>									
+					</div>
+				</div>
+				{% if forloop.counter|divisibleby:3%}</div><div class="col-md-4 product-men no-pad-men">{% endif %}
+				{% if forloop.last %}</div>{% endif %}
+				{% endfor %}
+				{% else %}
+					<div class="alert alter-danger">No hay productos</div>
+				{% endif %}
+				<div class="clearfix"></div>
+					{% include "SoloPuertasWeb/paginator_puertas.html" %}
+				</div>
+				<div class="clearfix"></div>
+				{% endblock %}
+				<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>	

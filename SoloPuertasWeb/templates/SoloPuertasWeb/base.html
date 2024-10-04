@@ -1,0 +1,257 @@
+<html>
+<head>
+<title>Solo Puertas</title>
+<!-- for-mobile-apps -->
+ 
+{% load static %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="solo puertas, brandsen, general belgrano, oblak, aberturas aluminio, todo puertas, varias marcas" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="{% static 'SoloPuertasWeb/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" href="{% static 'SoloPuertasWeb/css/jquery-ui.css' %}">
+<link href="{% static 'SoloPuertasWeb/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="{% static 'SoloPuertasWeb/js/jquery-2.1.4.min.js' %}"></script>
+<!-- //js -->
+<!-- cart -->
+	<script src="{% static 'SoloPuertasWeb/js/simpleCart.min.js' %}"></script>
+<!-- cart -->
+<!-- for bootstrap working -->
+	<script type="text/javascript" src="{% static 'SoloPuertasWeb/js/bootstrap-3.1.1.min.js' %}"></script>
+<!-- //for bootstrap working -->
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+<script src="{% static 'SoloPuertasWeb/js/jquery.easing.min.js' %}"></script>
+</head>
+    <!-- header -->
+    <div class="header">
+        <div class="container">
+            <ul>
+                <li><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Logística en envíos</li>
+                <li><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Calidad en puertas</li>
+                <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:info@solopuertas.com.ar">info@solopuertas.com.ar</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- //header -->
+    <!-- header-bot -->
+    <div class="header-bot">
+        <div class="container">
+            <div class="col-md-3 header-left">
+                <h1><a href="{% url 'Home' %}"><img src="{% static 'SoloPuertasWeb/images/logo3.jpg' %}"></a></h1>
+            </div>
+            <div class="col-md-6 header-middle">
+                <form action="resultado_busqueda" method="GET">
+                    <div class="search">
+                        <input type="search" name="prd" value="Buscar" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Buscar';}" required="">
+                    </div>
+                    <div class="section_room">
+                        <select id="country" name="tipo" onchange="change_country(this.value)" class="frm-field required">
+                            <option value="None">Categorías</option>
+                            <option value="PUERTA">Puertas</option>     
+                            <option value="ALUMINIO">En aluminio</option>
+                        </select>
+                    </div>
+                    <div class="sear-sub">
+                        <input type="submit" value=" ">
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+            <div class="col-md-3 header-right footer-bottom">
+                <ul>
+                    <li><a class="fb" href="#"></a></li>
+                    <li><a class="insta" href="#"></a></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- //header-bot -->
+    <!-- banner -->
+    <div class="ban-top">
+        <div class="container">
+            <div class="top_nav_left">
+                <nav class="navbar navbar-default">
+                  <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+                      <ul class="nav navbar-nav menu__list">
+                        <li class="active menu__item menu__item--current"><a class="menu__link" href="{% url 'Home' %}">Inicio <span class="sr-only">(current)</span></a></li>
+                        <li class=" menu__item"><a class="menu__link" href="{% url 'Puertas' %}">Puertas</a></li>
+                        <li class=" menu__item"><a class="menu__link" href="{% url 'Aluminio' %}">Aluminio</a></li>
+                        <li class=" menu__item"><a class="menu__link" href="{% url 'Galeria' %}">galería</a></li>
+                        <li class=" menu__item"><a class="menu__link" href="{% url 'Contacto' %}">contacto</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>	
+            </div>
+            <div class="top_nav_right">
+                    
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- //banner-top -->
+{% block content %}
+
+
+{% endblock %}
+<body>
+<!-- //product-nav -->
+<div class="coupons">
+	<div class="container">
+		<div class="coupons-grids text-center">
+			<div class="col-md-3 coupons-gd">
+				<h3>COMPRA TU PRODUCTO DE FORMA SENCILLA</h3>
+			</div>
+			<div class="col-md-3 coupons-gd">
+				<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+				<h4>INGRESE A SU CUENTA</h4>
+				<p></p>
+			</div>
+			<div class="col-md-3 coupons-gd">
+				<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				<h4>SELECCIONA TU ARTÍCULO</h4>
+				<p></p>
+			</div>
+			<div class="col-md-3 coupons-gd">
+				<span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
+				<h4>HACER EL PAGO</h4>
+				<p></p>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>	
+<!-- footer -->
+<div class="footer">
+	<div class="container">
+		<div class="col-md-3 footer-left">
+			<h2><a href="index.html"><img src="{% static 'SoloPuertasWeb/images/logo3.jpg' %}" alt=" " /></a></h2>
+			<p>Tu mejor opción en puertas y aberturas de aluminio</p>
+		</div>
+		<div class="col-md-9 footer-right">
+			<div class="col-sm-6 Nuevosleft">
+				<h3>Suscríbase al newsletter!</h3>
+			</div>
+			<div class="col-sm-2 newsright">
+				{% if submitted %}
+					Se envio el mensaje
+				{% else %}
+					<form action="" method="POST"> 
+						{% csrf_token%}
+						{{ Subscrip_form.as_p }}
+						<input class="btn btn-primary" type="submit" value="Enviar">
+					</form>
+				{% endif %}
+			</div>
+			<div class="clearfix"></div>
+			<div class="sign-grds">
+				<div class="col-md-4 sign-gd">
+					<h4>Links</h4>
+					<ul>
+						<li><a href="{% url 'Home' %}">Inicio</a></li>
+						<li><a href="{% url 'Puertas' %}">Puertas</a></li>
+						<li><a href="{% url 'Aluminio' %}">En aluminio</a></li>
+						<li><a href="{% url 'Galeria' %}">Galería</a></li>
+						<li><a href="{% url 'Contacto' %}">Contacto</a></li>
+					</ul>
+				</div>
+				
+				<div class="col-md-4 sign-gd-two">
+					<h4>Vías de comunicación</h4>
+					<ul>
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Dirección : Brandsen, General Belgrano <span></span></li>
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email : <a href="mailto:info@solopuertas.com.ar">info@solopuertas.com.ar</a></li>
+						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Celular : 2223 53-4999</li>
+					</ul>
+				</div>
+				
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<p class="copy-right">&copy 2016 Smart Shop. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a> / <a href="http://blunintergal.com.ar/">BLU Integral</a> </p>
+	</div>
+</div>
+<!-- //footer -->
+<!-- login -->
+			<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content modal-info">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+						</div>
+						<div class="modal-body modal-spa">
+							<div class="login-grids">
+								<div class="login">
+									<div class="login-bottom">
+										<h3>Sign up for free</h3>
+										<form>
+											<div class="sign-up">
+												<h4>Email :</h4>
+												<input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">	
+											</div>
+											<div class="sign-up">
+												<h4>Password :</h4>
+												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+												
+											</div>
+											<div class="sign-up">
+												<h4>Re-type Password :</h4>
+												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+												
+											</div>
+											<div class="sign-up">
+												<input type="submit" value="REGISTER NOW" >
+											</div>
+											
+										</form>
+									</div>
+									<div class="login-right">
+										<h3>Sign in with your account</h3>
+										<form>
+											<div class="sign-in">
+												<h4>Email :</h4>
+												<input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">	
+											</div>
+											<div class="sign-in">
+												<h4>Password :</h4>
+												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+												<a href="#">Forgot password?</a>
+											</div>
+											<div class="single-bottom">
+												<input type="checkbox"  id="brand" value="">
+												<label for="brand"><span></span>Remember Me.</label>
+											</div>
+											<div class="sign-in">
+												<input type="submit" value="SIGNIN" >
+											</div>
+										</form>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<p>By logging in you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+<!-- //login -->
+</body>
+</html>

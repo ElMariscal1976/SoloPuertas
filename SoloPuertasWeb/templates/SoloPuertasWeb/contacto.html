@@ -1,0 +1,56 @@
+{% extends "SoloPuertasWeb/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- contact -->
+<div class="contact">
+	<div class="container">
+		<div class="spec ">
+			<h3>Contacto</h3>
+				<div class="ser-t">
+					<b></b>
+					<span><i></i></span>
+					<b class="line"></b>
+				</div>
+		</div>
+		<div class="contact-w3">	
+			<div class="col-md-5 contact-right">	
+				<img src="images/cac.jpg" class="img-responsive" alt="">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.6657832672654!2d-58.2479468248531!3d-35.164955087353796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2c9d012d6b919%3A0x63b993d4b728f67!2sMariano%20Moreno%20241%2C%20B1980%20Coronel%20Brandsen%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1724988146997!5m2!1ses-419!2sar" width="400" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+		
+		</div>		
+		<div class="col-md-7 contact-left">
+			<h4>Información de contacto</h4>
+			<p>Estamos atentos a sus inquietudes</p>
+			<ul class="contact-list">
+				<li> <i class="fa fa-map-marker" aria-hidden="true"></i> Direccion</li>
+				<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="">correo</a></li>
+				<li> <i class="fa fa-phone" aria-hidden="true"></i>telefono</li>
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div id="container">
+		<h3 class="text-center">Formulario de Contacto</h3>
+		<p class="fs-5 text-center px-5">Es un placer contactarnos con Usted.</p>
+		<div class="row">
+			<div class="col-m-6">
+				{% if submitted %}
+					Se envio el mensaje
+				{% else %}
+					<form action="" method="POST"> 
+						{% csrf_token%}
+						{{ formulario.as_p }}
+						<input class="btn btn-primary" type="submit" value="Enviar Mensaje">
+					</form>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //contact -->
+
+{% endblock %}
